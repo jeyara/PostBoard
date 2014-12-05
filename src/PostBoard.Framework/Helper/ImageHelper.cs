@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,15 @@ namespace PostBoard.Framework.Helper
 {
     public static class ImageHelper
     {
+        public static object ReadImageExif(string fullPathToImage)
+        {
+            Image theImage = new Bitmap(fullPathToImage);
+
+            PropertyItem[] propItems = theImage.PropertyItems;
+
+            return propItems;
+        }
+
         public static Image ResizeImage(Image image, Size size, bool preserveAspectRatio = true, bool dontZoom = true)
         {
             int newWidth;

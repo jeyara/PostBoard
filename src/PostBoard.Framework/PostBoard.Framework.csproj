@@ -44,6 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExifReader\ExifTag.cs" />
+    <Compile Include="ExifReader\ExifTagCollection.cs" />
+    <Compile Include="ExifReader\Util.cs" />
     <Compile Include="Helper\FTPHelper.cs" />
     <Compile Include="Helper\ImageHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

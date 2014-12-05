@@ -45,7 +45,6 @@ namespace PostBoard.Framework.Common
 
         T GetAttributeValue<T>(string key);
 
-        T GetAttributeValue<T>(string key);
-    }
+   }
 
 }
