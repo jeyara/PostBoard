@@ -21,12 +21,12 @@ namespace PostBoard.Framework.Common
         /// <summary>
         /// A Short Introduction about the image. Usually shown in P or H tag
         /// </summary>
-        string ShortDescription { get; set; }
+        string Caption { get; set; }
 
         /// <summary>
         /// A Title for the image. Usually shown in H tag
         /// </summary>
-        string ImageTitle { get; set; }
+        string Title { get; set; }
 
         /// <summary>
         /// Alternative text to show in img tag

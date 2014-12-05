@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PostBoard.Framework.SettingEntities
+{
+    public class CommonWebsiteSetting
+    {
+        public string AboutUs { get; set; }
+
+        public string GoogleAnalyticsCode { get; set; }
+
+        public int ThumbnailWidth { get; set; }
+
+        public string WebsiteName { get; set; }
+
+        public string WebsiteUrl { get; set; }
+    }
+}
