@@ -20,7 +20,7 @@ namespace PostBoard.Controllers
             return View();
         }
 
-        public ActionResult Pins()
+        public ActionResult Stream()
         {
             return View();
         }

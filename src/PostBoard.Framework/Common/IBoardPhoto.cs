@@ -14,15 +14,25 @@ namespace PostBoard.Framework.Common
     interface IBoardPhoto
     {
         /// <summary>
-        /// Full path of the image including domain and file extension
+        /// Unique id for photo
         /// </summary>
-        string FullUrl { get; set; }
+        int Id { get; set; }
 
         /// <summary>
-        /// A Short Introduction about the image
+        /// A Short Introduction about the image. Usually shown in P or H tag
         /// </summary>
-        string Caption { get; set; }
-        
+        string ShortDescription { get; set; }
+
+        /// <summary>
+        /// A Title for the image. Usually shown in H tag
+        /// </summary>
+        string ImageTitle { get; set; }
+
+        /// <summary>
+        /// Alternative text to show in img tag
+        /// </summary>
+        string AltText { get; set; }
+
         /// <summary>
         /// will be used as # tags
         /// </summary>
@@ -31,6 +41,11 @@ namespace PostBoard.Framework.Common
         /// <summary>
         /// No full idea on this. But this can be used to hold information like latitude or longitude etc.
         /// </summary>
-        Dictionary<string, string> CustomData { get; set; }
+        Dictionary<string, string> Attributes { get; set; }
+
+        T GetAttributeValue<T>(string key);
+
+        T GetAttributeValue<T>(string key);
     }
+
 }

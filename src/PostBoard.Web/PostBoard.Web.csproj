@@ -42,6 +42,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -143,7 +149,7 @@
     <Content Include="Views\Shared\_PublicLayout.cshtml" />
     <Content Include="Views\Shared\_PrivateLayout.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
-    <Content Include="Views\Home\Pins.cshtml" />
+    <Content Include="Views\Home\Stream.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <None Include="Web.Debug.config">
