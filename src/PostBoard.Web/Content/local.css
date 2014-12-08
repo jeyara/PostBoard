@@ -1,16 +1,16 @@
 ﻿body {
   padding-top: 70px;
-  	background: url(http://subtlepatterns.com/patterns/scribble_light.png) ;
+	background: url(http://subtlepatterns.com/patterns/scribble_light.png) ;
 }
 /**/
 .scroll-top-wrapper {
-    position: fixed;
+	position: fixed;
 	opacity: 0;
 	visibility: hidden;
 	overflow: hidden;
 	text-align: center;
 	z-index: 99999999;
-    background-color: #777777;
+	background-color: #777777;
 	color: #eeeeee;
 	width: 50px;
 	height: 48px;
@@ -32,8 +32,8 @@
 	background-color: #888888;
 }
 .scroll-top-wrapper.show {
-    visibility:visible;
-    cursor:pointer;
+	visibility:visible;
+	cursor:pointer;
 	opacity: 1.0;
 }
 .scroll-top-wrapper i.fa {
@@ -56,8 +56,8 @@
   position: relative;
   height: auto;
   -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+	 -moz-box-sizing: border-box;
+		  box-sizing: border-box;
   padding: 10px;
   font-size: 16px;
 }

@@ -101,6 +101,7 @@
     <Content Include="App_Data\PostBoard_log.ldf">
       <DependentUpon>PostBoard.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\dropzone.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\local.css" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -120,14 +121,18 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-1.9.0.intellisense.js" />
+    <Content Include="Img\spritemap%402x.png" />
+    <Content Include="Img\spritemap.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\dropzone.js" />
     <Content Include="Scripts\ie-emulation-modes-warning.js" />
     <Content Include="Scripts\ie10-viewport-bug-workaround.js" />
     <Content Include="Scripts\ie8-responsive-file-warning.js" />
     <Content Include="Scripts\jquery-1.9.0.js" />
     <Content Include="Scripts\jquery-1.9.0.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.carousel.fullscreen.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -156,6 +161,7 @@
     <Content Include="Views\Home\Stream.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\Upload.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -164,7 +170,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Img\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
