@@ -10,7 +10,7 @@ namespace PostBoard.Controllers
 		// GET: /Home/
 		public ActionResult Index()
 		{
-            IDbContext context = new DAObjectContext(ConfigurationManager.ConnectionStrings["PostBoardDB"].ConnectionString);
+           // IDbContext context = new DAObjectContext(ConfigurationManager.ConnectionStrings["PostBoardDB"].ConnectionString);
 
 
 			return View();
