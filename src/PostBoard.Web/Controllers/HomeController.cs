@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Configuration;
 using System.Web.Mvc;
+using PostBoard.Data.Repository;
 
 namespace PostBoard.Controllers
 {
@@ -12,6 +10,9 @@ namespace PostBoard.Controllers
 		// GET: /Home/
 		public ActionResult Index()
 		{
+            IDbContext context = new DAObjectContext(ConfigurationManager.ConnectionStrings["PostBoardDB"].ConnectionString);
+
+
 			return View();
 		}
 

@@ -172,6 +172,20 @@
   <ItemGroup>
     <Folder Include="Models\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PostBoard.Data\PostBoard.Data.csproj">
+      <Project>{e13150f5-67c5-4e79-9160-cead6ac14890}</Project>
+      <Name>PostBoard.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PostBoard.Framework\PostBoard.Framework.csproj">
+      <Project>{07744ad2-bf17-4728-90aa-6b2b268f0a25}</Project>
+      <Name>PostBoard.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PostBoard.Services\PostBoard.Services.csproj">
+      <Project>{208dc00e-503d-4264-95f5-06a90e33a274}</Project>
+      <Name>PostBoard.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

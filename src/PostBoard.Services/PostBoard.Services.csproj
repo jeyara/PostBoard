@@ -50,15 +50,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\ISettingService.cs" />
+    <Compile Include="Core\SettingService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CoreServices\" />
-    <Folder Include="SocialMediaServices\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PostBoard.Data\PostBoard.Data.csproj">
+      <Project>{e13150f5-67c5-4e79-9160-cead6ac14890}</Project>
+      <Name>PostBoard.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PostBoard.Framework\PostBoard.Framework.csproj">
+      <Project>{07744ad2-bf17-4728-90aa-6b2b268f0a25}</Project>
+      <Name>PostBoard.Framework</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
