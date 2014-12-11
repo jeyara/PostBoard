@@ -179,7 +179,7 @@ padding-left: 5px;
 	text-align:center;
 }
 
-.panel-heading > img {
+.panel-heading img {
 	background-image: url(/img/loading_wheel_trans.png) ;
 	width: 100%;
 	border-top-left-radius:3px;

@@ -7,6 +7,7 @@ namespace PostBoard
     {
         protected void Application_Start()
         {
+            IocConfig.RegisterIoc();
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
