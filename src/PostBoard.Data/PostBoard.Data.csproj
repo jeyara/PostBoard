@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -38,6 +41,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -48,16 +52,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DependencyRegistrar.cs" />
     <Compile Include="Enum\ImageStatus.cs" />
     <Compile Include="Mapping\AttributeMap.cs" />
     <Compile Include="Mapping\ImageAttributeMap.cs" />
     <Compile Include="Mapping\ImageMap.cs" />
+    <Compile Include="Mapping\ImageScheduleMap.cs" />
     <Compile Include="Mapping\ImageTagMap.cs" />
     <Compile Include="Mapping\SettingMap.cs" />
     <Compile Include="Mapping\TagMap.cs" />
     <Compile Include="Models\Attribute.cs" />
     <Compile Include="Models\Image.cs" />
     <Compile Include="Models\ImageAttribute.cs" />
+    <Compile Include="Models\ImageSchedule.cs" />
     <Compile Include="Models\ImageTag.cs" />
     <Compile Include="Models\Setting.cs" />
     <Compile Include="Models\Tag.cs" />
@@ -74,6 +81,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PostBoard.Framework\PostBoard.Framework.csproj">
+      <Project>{07744ad2-bf17-4728-90aa-6b2b268f0a25}</Project>
+      <Name>PostBoard.Framework</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

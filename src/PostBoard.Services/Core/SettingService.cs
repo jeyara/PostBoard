@@ -9,7 +9,7 @@ using PostBoard.Framework.Caching;
 using PostBoard.Framework.Helper;
 using PostBoard.Framework.Interfaces;
 
-namespace NextG_IS.Services.Core.Services
+namespace PostBoard.Services.Core
 {
        /// <summary>
         /// Setting manager

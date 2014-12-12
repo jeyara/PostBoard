@@ -11,6 +11,8 @@ namespace PostBoard.Data.Models
 
         private ICollection<ImageTag> _ImageTags { get; set; }
 
+        private ICollection<ImageSchedule> _ImageSchedules { get; set; }
+
         public string Title { get; set; }
 
         public string Caption { get; set; }
@@ -47,5 +49,10 @@ namespace PostBoard.Data.Models
             protected set { _ImageAttributes = value; }
         }
 
+        public virtual ICollection<ImageSchedule> ImageSchedules
+        {
+            get { return _ImageSchedules ?? (_ImageSchedules = new List<ImageSchedule>()); }
+            protected set { _ImageSchedules = value; }
+        }
     }
 }

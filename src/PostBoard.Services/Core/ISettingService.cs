@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 using PostBoard.Data.Models;
 using PostBoard.Framework.Interfaces;
 
-namespace NextG_IS.Services.Core.Services
+namespace PostBoard.Services.Core
 {
     /// <summary>
     /// Setting service interface

@@ -1,5 +1,5 @@
 ﻿
-namespace PostBoard.Framework.SettingEntities
+namespace PostBoard.Framework.Entities
 {
     public class CommonWebsiteSetting
     {

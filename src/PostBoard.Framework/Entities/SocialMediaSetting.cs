@@ -1,5 +1,5 @@
 ﻿
-namespace PostBoard.Framework.SettingEntities
+namespace PostBoard.Framework.Entities
 {
     public class SocialMediaSetting
     {
@@ -10,6 +10,8 @@ namespace PostBoard.Framework.SettingEntities
         public string GooglePlusPage { get; set; }
 
         public string PinterestPage { get; set; }
+
+        public string FlickrPage { get; set; }
 
     }
 }

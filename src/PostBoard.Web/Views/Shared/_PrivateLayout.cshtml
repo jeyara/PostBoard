@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using StackExchange.Profiling;
+
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -61,7 +63,7 @@
 
     <!-- Dropzone JS -->
     <script src="/Scripts/dropzone.js"></script>
-
+    @MiniProfiler.RenderIncludes()
 </body>
 
 </html>
