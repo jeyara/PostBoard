@@ -58,47 +58,13 @@ padding-left: 5px;
 }*/
 /*================================================== Streaming Page Dynamic Style End ================================================== */
 
-/*================================================== Scroll To top Style Start ================================================== */
-.scroll-top-wrapper {
-	position: fixed;
-	opacity: 0;
-	visibility: hidden;
-	overflow: hidden;
-	text-align: center;
-	z-index: 99999999;
-	background-color: #777777;
-	color: #eeeeee;
-	width: 30px;
-	height: 38px;
-	line-height: 48px;
-	right: 30px;
-	bottom: 0px;
-	padding-top: 0px;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-	border-bottom-right-radius: 0px;
-	border-bottom-left-radius: 0px;
-	-webkit-transition: all 0.5s ease-in-out;
-	-moz-transition: all 0.5s ease-in-out;
-	-ms-transition: all 0.5s ease-in-out;
-	-o-transition: all 0.5s ease-in-out;
-	transition: all 0.5s ease-in-out;
-}
-
-.scroll-top-wrapper:hover {
-	background-color: #888888;
-}
-.scroll-top-wrapper.show {
-	visibility:visible;
-	cursor:pointer;
-	opacity: 1.0;
-}
-.scroll-top-wrapper i.fa {
-	line-height: inherit;
-}
-/*================================================== Scroll To top Style End ================================================== */
-
 /*================================================== Streaming Page Style Start ================================================== */
+
+.container > .columns
+{
+	margin-bottom:20px;
+}
+
 .panel-primary {
 	position:relative;
 	display: block;
@@ -160,6 +126,46 @@ padding-left: 5px;
 	margin: 0;
 }
 /*================================================== Streaming Page Style End ================================================== */
+
+/*================================================== Scroll To top Style Start ================================================== */
+.scroll-top-wrapper {
+	position: fixed;
+	opacity: 0;
+	visibility: hidden;
+	overflow: hidden;
+	text-align: center;
+	z-index: 99999999;
+	background-color: #777777;
+	color: #eeeeee;
+	width: 30px;
+	height: 38px;
+	line-height: 48px;
+	right: 30px;
+	bottom: 0px;
+	padding-top: 0px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+.scroll-top-wrapper:hover {
+	background-color: #888888;
+}
+.scroll-top-wrapper.show {
+	visibility:visible;
+	cursor:pointer;
+	opacity: 1.0;
+}
+.scroll-top-wrapper i.fa {
+	line-height: inherit;
+}
+/*================================================== Scroll To top Style End ================================================== */
 
 @media (max-width: 768px) {
 	body {

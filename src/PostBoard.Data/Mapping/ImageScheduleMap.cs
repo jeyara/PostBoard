@@ -33,6 +33,8 @@ namespace PostBoard.Data.Mapping
             this.Property(t => t.EndDate)
                 .IsOptional();
 
+            this.Ignore(t => t.Status);
+
             // Table & Column Mappings
             this.ToTable("ImageSchedule");
 

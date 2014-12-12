@@ -71,6 +71,8 @@
     <Compile Include="Interfaces\IBoardPhoto.cs" />
     <Compile Include="Entities\CommonWebsiteSetting.cs" />
     <Compile Include="Entities\SocialMediaSetting.cs" />
+    <Compile Include="Reflection\ITypeFinder.cs" />
+    <Compile Include="Reflection\TypeFinder.cs" />
     <Compile Include="Routing\RoutePublisher.cs" />
     <Compile Include="Routing\IRoutePublisher.cs" />
     <Compile Include="Routing\IRouteProvider.cs" />

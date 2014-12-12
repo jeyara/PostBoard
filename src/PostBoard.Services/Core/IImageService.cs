@@ -14,11 +14,11 @@ namespace PostBoard.Services.Core
 
         Image GetImageById(int id);
 
-        IPagedList<Image> GetImages(bool filterBySchedule = true, string slugToFilter = "", int? pageNo = null);
+        IPagedList<Image> GetImages(bool filterBySchedule = true, string slugToFilter = "", int? pageNo = null, int? pageSize = null);
 
         IPagedList<Image> GetImagesByTagId(int tagId);
 
-        IPagedList<Image> GetFeaturedImages(bool filterBySchedule = true, int? pageNo = null);
+        IPagedList<Image> GetFeaturedImages(bool filterBySchedule = true, int? pageNo = null, int? pageSize = null);
 
         void InsertImage(Image image);
 

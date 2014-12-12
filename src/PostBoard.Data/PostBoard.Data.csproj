@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="DependencyRegistrar.cs" />
     <Compile Include="Enum\ImageStatus.cs" />
+    <Compile Include="Enum\ScheduleStatus.cs" />
     <Compile Include="Mapping\AttributeMap.cs" />
     <Compile Include="Mapping\ImageAttributeMap.cs" />
     <Compile Include="Mapping\ImageMap.cs" />
