@@ -14,7 +14,7 @@ namespace PostBoard.Data
     {
         public void Register(ContainerBuilder builder)
         {
-            builder.Register<IDbContext>(c => new DAObjectContext(ConfigurationManager.ConnectionStrings["Local"].ConnectionString)).SingleInstance();
+            builder.Register<IDbContext>(c => new DAObjectContext(ConfigurationManager.ConnectionStrings["PostBoardDB"].ConnectionString)).SingleInstance();
             builder.RegisterGeneric(typeof(EfRepository<>)).As(typeof(IRepository<>));
         }
 

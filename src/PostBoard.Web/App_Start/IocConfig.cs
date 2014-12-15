@@ -17,11 +17,6 @@ namespace PostBoard
         {
             var builder = new ContainerBuilder();
 
-            // Register your MVC controllers.
-            builder.RegisterControllers(typeof(MvcApplication).Assembly);
-
-            builder.RegisterModule<AutofacWebTypesModule>();
-
             #region Dynamic Discovery of Services and Classes using AutoFac
 
             /*
@@ -41,6 +36,12 @@ namespace PostBoard
                 dependencyRegistrar.Register(builder);
 
             #endregion
+
+            // Register your MVC controllers.
+            builder.RegisterControllers(typeof(MvcApplication).Assembly);
+
+            builder.RegisterModule<AutofacWebTypesModule>();
+
 
             // Set the dependency resolver to be Autofac.
             var container = builder.Build();

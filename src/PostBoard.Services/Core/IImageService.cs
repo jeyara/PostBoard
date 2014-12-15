@@ -8,7 +8,7 @@ using PostBoard.Framework;
 
 namespace PostBoard.Services.Core
 {
-    interface IImageService
+    public interface IImageService
     {
         #region Image Service
 

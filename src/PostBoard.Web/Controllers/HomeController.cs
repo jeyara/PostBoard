@@ -1,13 +1,34 @@
 ﻿using System.Configuration;
 using System.Web.Mvc;
 using PostBoard.Data.Repository;
+using PostBoard.Framework.Caching;
+using PostBoard.Services.Core;
 using StackExchange.Profiling;
 
 namespace PostBoard.Controllers
 {
 	public class HomeController : Controller
-	{
-		//
+    {
+        #region Fields
+
+        private readonly IImageService _imageService;
+        private readonly ISettingService _settingService;
+        private readonly ICacheManager _cacheManager;
+
+        #endregion
+
+        #region Ctr
+
+        public HomeController(IImageService imageService, ISettingService settingService, ICacheManager cacheManager)
+        {
+            this._imageService = imageService;
+            this._settingService = settingService;
+            this._cacheManager = cacheManager;
+        }
+
+        #endregion
+
+        //
 		// GET: /Home/
 		public ActionResult Index()
 		{
@@ -36,6 +57,8 @@ namespace PostBoard.Controllers
             {
                 ViewBag.Title = tag;
             }
+
+            var x = _imageService.GetImageById(1);
 
             return View();
         }

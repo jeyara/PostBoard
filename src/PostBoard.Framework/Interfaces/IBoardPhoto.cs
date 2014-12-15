@@ -7,7 +7,7 @@ namespace PostBoard.Framework.Common
     /// This interface will be used to post in social media or just to display on this website it self.
     /// Trying to Stick to KISS principal as much as possible.
     /// </summary>
-    interface IBoardPhoto
+    public interface IBoardPhoto
     {
         /// <summary>
         /// Unique id for photo
@@ -25,6 +25,16 @@ namespace PostBoard.Framework.Common
         string Title { get; set; }
 
         /// <summary>
+        /// Url of the small size image
+        /// </summary>
+        string StampSizeUrl { get; set; }
+
+        /// <summary>
+        /// Url of the full size image
+        /// </summary>
+        string FullSizeUrl { get; set; }
+
+        /// <summary>
         /// Alternative text to show in img tag
         /// </summary>
         string AltText { get; set; }
@@ -32,15 +42,12 @@ namespace PostBoard.Framework.Common
         /// <summary>
         /// will be used as # tags
         /// </summary>
-        IList<string> Keywords { get; set; }
+        IList<string> HashTags { get; set; }
 
         /// <summary>
         /// No full idea on this. But this can be used to hold information like latitude or longitude etc.
         /// </summary>
         Dictionary<string, string> Attributes { get; set; }
-
-        T GetAttributeValue<T>(string key);
-
    }
 
 }
