@@ -6,12 +6,12 @@ using PostBoard.Framework.Common;
 
 namespace PostBoard.Web.Models
 {
-    public class HomePhotoModel : IBoardPhoto
+    public class PhotoModel : IBoardPhoto
     {
         private IList<string> _hashTags;
         private Dictionary<string, string> _attributes;
 
-        public HomePhotoModel()
+        public PhotoModel()
         {
             _hashTags = new List<string>();
             _attributes = new Dictionary<string, string>();
