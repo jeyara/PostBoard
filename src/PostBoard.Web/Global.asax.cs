@@ -1,7 +1,6 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
 using StackExchange.Profiling;
-using StackExchange.Profiling.EntityFramework6;
 
 namespace PostBoard
 {
@@ -19,7 +18,6 @@ namespace PostBoard
             if (Request.IsLocal)
             {
                 MiniProfiler.Start();
-                MiniProfilerEF6.Initialize();
             }
         }
 
