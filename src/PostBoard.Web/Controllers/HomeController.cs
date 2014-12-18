@@ -2,12 +2,13 @@
 using System.Web.Mvc;
 using PostBoard.Data.Repository;
 using PostBoard.Framework.Caching;
+using PostBoard.Framework.Web;
 using PostBoard.Services.Core;
 using StackExchange.Profiling;
 
 namespace PostBoard.Controllers
 {
-	public class HomeController : Controller
+	public class HomeController : PublicControllerBase
     {
         #region Fields
 
@@ -28,8 +29,9 @@ namespace PostBoard.Controllers
 
         #endregion
 
-        //
-		// GET: /Home/
+        #region Home Page
+
+        // GET: /Home/
 		public ActionResult Index()
 		{
            // IDbContext context = new DAObjectContext(ConfigurationManager.ConnectionStrings["PostBoardDB"].ConnectionString);
@@ -38,24 +40,17 @@ namespace PostBoard.Controllers
 			return View();
 		}
 
-        public ActionResult Login()
-        {
-            return View();
-        }
+        #endregion
 
         #region Portfolio Page
 
-
-        #endregion
-
-        [Route("portfolio/{tag?}", Name = "Portfolio")]
-        [Route("home/stream/{tag?}", Name = "Stream")]
-        public ActionResult Stream(string tag)
+        [Route("portfolio/tagged/{tag}/{page:int?}", Name = "Tags")]
+        public ActionResult Portfolio(string tag, int page = 1)
         {
             var profiler = MiniProfiler.Current; // it's ok if this is null
             using (profiler.Step("Set page title"))
             {
-                ViewBag.Title = tag;
+                ViewBag.Title = tag + " " + page.ToString();
             }
 
             var x = _imageService.GetImageById(1);
@@ -63,33 +58,30 @@ namespace PostBoard.Controllers
             return View();
         }
 
-        [Route("portfolio/page/{number:int}", Name = "PortfolioDefaultPaging")]
-        public ActionResult Stream(int number)
+        [Route("portfolio/{page:int?}", Name = "Portfolio")]
+        public ActionResult Portfolio(int page = 1)
         {
             var profiler = MiniProfiler.Current; // it's ok if this is null
             using (profiler.Step("Set page title"))
             {
-                ViewBag.Title = string.Format("default page of page {0}", number);
+                ViewBag.Title = "all" + " " + page.ToString();
             }
+
+            var x = _imageService.GetImageById(1);
 
             return View();
         }
 
-        [Route("portfolio/{tag}/page/{number:int}", Name = "PortfolioTagsPaging")]
-        public ActionResult Stream(string tag, int number)
-        {
-            var profiler = MiniProfiler.Current; // it's ok if this is null
-            using (profiler.Step("Set page title"))
-            {
-                ViewBag.Title = string.Format("{0} of page {1}", tag, number);
-            }
+        #endregion
 
-            return View();
-        }
+        #region About Us
 
+        [Route("about", Name = "About")]
         public ActionResult About()
         {
             return View();
         }
+
+        #endregion
     }
 }

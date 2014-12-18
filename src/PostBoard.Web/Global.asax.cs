@@ -13,6 +13,8 @@ namespace PostBoard
             AreaRegistration.RegisterAllAreas();
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            GlobalConfiguration.Configuration.EnsureInitialized(); 
         }
 
         protected void Application_BeginRequest()

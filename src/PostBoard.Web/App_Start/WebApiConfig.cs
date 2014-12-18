@@ -10,8 +10,11 @@ namespace PostBoard
     {
         public static void Register(HttpConfiguration configuration)
         {
-            configuration.Routes.MapHttpRoute("API Default", "api/{controller}/{id}",
-                new { id = RouteParameter.Optional });
+            // Web API routes
+            configuration.MapHttpAttributeRoutes();
+
+            //configuration.Routes.MapHttpRoute("API Default", "api/{controller}/{id}",
+            //    new { id = RouteParameter.Optional });
         }
     }
 }

@@ -2,10 +2,12 @@
 using System.IO;
 using System.Web;
 using System.Web.Mvc;
+using PostBoard.Framework.Web;
+using PostBoard.Web.Controllers;
 
 namespace PostBoard.Controllers
 {
-	public class AdminController : Controller
+    public class AdminController : PrivateControllerBase
 	{
 		//
 		// GET: /Admin/
@@ -18,6 +20,11 @@ namespace PostBoard.Controllers
 		{
 			return View();
 		}
+
+        public ActionResult Login()
+        {
+            return View();
+        }
 
 		public ActionResult SaveUploadedFiles()
 		{
