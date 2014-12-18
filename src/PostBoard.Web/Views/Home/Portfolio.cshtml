@@ -122,15 +122,15 @@
     function append(url) {
         // build/select our elements
         var grid = $('#grid');
+        var item = document.createElement('div');
 
         // build the html
         var h = '</div><div class="panel panel-primary"><div class="panel-heading"><img src="' + url + '"/></div></div>';
-        var item = document.createElement(h);
 
         //$('#grid').append(h);
         alert(h);
-        salvattore.append_elements(grid, item);
-        //item.outerHTML = h;
+        salvattore.append_elements(grid, h);
+        item.outerHTML = h;
         alert(item.outerHTML);
     }
 
