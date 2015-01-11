@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "AddFiles";
+    Layout = "~/Views/Shared/_PrivateLayout.cshtml";
+}
+
+<h2>Upload New Files</h2>
+
+<div id="dropzone">
+    <form action="~/admin/SaveUploadedFiles" class="dropzone" id="demo-upload" method="post" enctype="multipart/form-data">
+        <div class="fallback">
+            <input name="file" type="file" multiple />
+            <input type="submit" value="Upload" />
+        </div>
+    </form>
+</div>
