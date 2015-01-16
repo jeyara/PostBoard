@@ -1,0 +1,45 @@
+﻿@model List<TurboDSLR.Web.Models.PhotoModel>
+
+@{
+    string activeClass = "active";
+}
+
+@if (Model.Count() > 0)
+{
+    <div id="home-carousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                <li data-target="#home-carousel" data-slide-to="@i" class="active"></li>
+            }
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+
+            @foreach (var photo in Model)
+            {
+                <div class="item @activeClass">
+                    <img src="@photo.FullSizeUrl" alt="@photo.AltText" title="@photo.Title" />
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1>@photo.Title</h1>
+                            <p class="lead">@photo.Caption</p>
+                        </div>
+                    </div>
+                </div>
+
+                activeClass = "";
+            }
+        </div>
+        <!-- Controls -->
+        <a class="left carousel-control" href="#home-carousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#home-carousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+}
+
+

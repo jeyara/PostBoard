@@ -5,10 +5,11 @@ using TurboDSLR.Framework.Caching;
 using TurboDSLR.Framework.Web;
 using TurboDSLR.Services.Core;
 using StackExchange.Profiling;
+using TurboDSLR.Web.Models;
 
 namespace TurboDSLR.Controllers
 {
-	public class HomeController : PublicControllerBase
+    public class HomeController : PublicControllerBase
     {
         #region Fields
 
@@ -32,13 +33,38 @@ namespace TurboDSLR.Controllers
         #region Home Page
 
         // GET: /Home/
-		public ActionResult Index()
-		{
-           // IDbContext context = new DAObjectContext(ConfigurationManager.ConnectionStrings["PostBoardDB"].ConnectionString);
+        public ActionResult Index()
+        {
 
+            HomeModel homeModel = new HomeModel();
 
-			return View();
-		}
+            PhotoModel pm = new PhotoModel();
+            pm.Caption = "Image One Caption";
+            pm.Title = "Image One Title";
+            pm.FullSizeUrl = "/assets/opera-house.jpg";
+            pm.AltText = "Image One Alt Text";
+            pm.Id = 1;
+            homeModel.HomePhotos.Add(pm);
+
+            PhotoModel pm2 = new PhotoModel();
+            pm2.Caption = "Image 2 Caption";
+            pm2.Title = "Image 2 Title";
+            pm2.FullSizeUrl = "/assets/parliment-house.jpg";
+            pm2.AltText = "Image 2 Alt Text";
+            pm2.Id = 2;
+            homeModel.HomePhotos.Add(pm2);
+
+            PhotoModel pm3 = new PhotoModel();
+            pm3.Caption = "Image 3 Caption";
+            pm3.Title = "Image 3 Title";
+            pm3.FullSizeUrl = "/assets/pier-sunrise.jpg";
+            pm3.AltText = "Image 3 Alt Text";
+            pm3.Id = 3;
+            homeModel.HomePhotos.Add(pm3);
+
+            return View(homeModel);
+            //return View(BuildHomeModel());
+        }
 
         #endregion
 
@@ -83,5 +109,30 @@ namespace TurboDSLR.Controllers
         }
 
         #endregion
+
+        #region Private Methods
+
+        private HomeModel BuildHomeModel()
+        {
+            HomeModel homeModel = new HomeModel();
+
+            var featuredImages = _imageService.GetFeaturedImages(true);
+
+            foreach (var image in featuredImages)
+            {
+                PhotoModel pm = new PhotoModel();
+                pm.Caption = image.Caption;
+                pm.Title =  image.Title;
+                pm.FullSizeUrl = image.FileName;
+                pm.AltText = image.AltText;
+                pm.Id = image.Id;
+                homeModel.HomePhotos.Add(pm);
+            }
+
+            return homeModel;
+        }
+
+        #endregion
+    
     }
 }

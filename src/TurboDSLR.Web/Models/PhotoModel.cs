@@ -6,7 +6,7 @@ using TurboDSLR.Framework.Common;
 
 namespace TurboDSLR.Web.Models
 {
-    public class PhotoModel : IBoardPhoto
+    public class PhotoModel : BaseEntityModel, IBoardPhoto
     {
         private IList<string> _hashTags;
         private Dictionary<string, string> _attributes;
@@ -18,8 +18,6 @@ namespace TurboDSLR.Web.Models
         }
 
         #region IBoardPhoto Members
-
-        public int Id { get; set; }
 
         public string Caption { get; set; }
 

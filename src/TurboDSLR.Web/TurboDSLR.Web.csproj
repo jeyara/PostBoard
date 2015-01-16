@@ -132,8 +132,12 @@
     <Content Include="App_Data\PostBoard_log.ldf">
       <DependentUpon>PostBoard.mdf</DependentUpon>
     </Content>
+    <Content Include="Assets\opera-house.jpg" />
+    <Content Include="Assets\parliment-house.jpg" />
+    <Content Include="Assets\pier-sunrise.jpg" />
     <Content Include="Content\dropzone.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\Site.css" />
     <Content Include="Content\style-internal.css" />
     <Content Include="Content\style.css" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -172,6 +176,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\salvattore.js" />
     <Content Include="Scripts\salvattore.min.js" />
     <Content Include="Web.config">
@@ -192,6 +197,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\BaseEntityModel.cs" />
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\HomeModel.cs" />
     <Compile Include="Models\PhotoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -206,6 +214,9 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\Upload.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\_HomeCarousel.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -227,6 +238,7 @@
       <Name>TurboDSLR.Services</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
