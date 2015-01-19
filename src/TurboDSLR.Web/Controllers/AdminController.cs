@@ -40,7 +40,7 @@ namespace TurboDSLR.Controllers
 					if (file != null && file.ContentLength > 0)
 					{
 
-						var originalDirectory = new DirectoryInfo(string.Format("{0}Images\\WallImages", Server.MapPath(@"\")));
+						var originalDirectory = new DirectoryInfo(string.Format("{0}Assets\\", Server.MapPath(@"\")));
 
 						string pathString = System.IO.Path.Combine(originalDirectory.ToString(), "imagepath");
 
