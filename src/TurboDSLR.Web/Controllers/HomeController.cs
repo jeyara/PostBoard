@@ -6,6 +6,7 @@ using TurboDSLR.Framework.Web;
 using TurboDSLR.Services.Core;
 using StackExchange.Profiling;
 using TurboDSLR.Web.Models;
+using TurboDSLR.Framework.DependencyManagement;
 
 namespace TurboDSLR.Controllers
 {
@@ -35,7 +36,6 @@ namespace TurboDSLR.Controllers
         // GET: /Home/
         public ActionResult Index()
         {
-
             HomeModel homeModel = new HomeModel();
 
             PhotoModel pm = new PhotoModel();

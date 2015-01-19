@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Autofac;
+using Autofac.Integration.Mvc;
 using TurboDSLR.Framework.Caching;
 using TurboDSLR.Framework.DependencyManagement;
+using TurboDSLR.Framework.Web.Page;
 using TurboDSLR.Framework.Web.Routing;
 
 namespace TurboDSLR.Framework
@@ -16,6 +18,8 @@ namespace TurboDSLR.Framework
         {
             builder.RegisterType<MemoryCacheManager>().As<ICacheManager>().Named<ICacheManager>("MainCache").SingleInstance();
             builder.RegisterType<RoutePublisher>().As<IRoutePublisher>().SingleInstance();
+            builder.RegisterType<PageHeadBuilder>().As<IPageHeadBuilder>().InstancePerRequest();
+
         }
     }
 }
