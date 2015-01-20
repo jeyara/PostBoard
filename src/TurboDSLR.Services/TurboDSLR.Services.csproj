@@ -46,6 +46,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,9 +57,13 @@
     <Compile Include="Core\IImageService.cs" />
     <Compile Include="Core\ImageService.cs" />
     <Compile Include="Core\ISettingService.cs" />
+    <Compile Include="Core\IWebHelper.cs" />
     <Compile Include="Core\SettingService.cs" />
+    <Compile Include="Core\WebHelper.cs" />
     <Compile Include="DependencyRegistrar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings\WebSiteSetting.cs" />
+    <Compile Include="Settings\ImageSetting.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

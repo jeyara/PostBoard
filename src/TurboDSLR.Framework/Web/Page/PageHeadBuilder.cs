@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
-using TurboDSLR.Framework.Web.Seo;
+using TurboDSLR.Framework.Web.Settings;
+using TurboDSLR.Framework.Web.Settings;
 
 namespace TurboDSLR.Framework.Web.Page
 {

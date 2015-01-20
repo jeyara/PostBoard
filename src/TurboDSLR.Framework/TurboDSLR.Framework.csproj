@@ -109,10 +109,17 @@
     <Compile Include="Caching\ICacheManager.cs" />
     <Compile Include="Caching\MemoryCacheManager.cs" />
     <Compile Include="Caching\NoCacheManager.cs" />
+    <Compile Include="CommonHelper.cs" />
     <Compile Include="DependencyManagement\Container.cs" />
     <Compile Include="DependencyRegistrar.cs" />
+    <Compile Include="ExifReader\ExifEnums.cs" />
+    <Compile Include="ExifReader\ExifSupportedTags.cs" />
     <Compile Include="ExifReader\ExifTag.cs" />
-    <Compile Include="ExifReader\ExifTagCollection.cs" />
+    <Compile Include="ExifReader\ExifService.cs" />
+    <Compile Include="ExifReader\ExifTagCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExifReader\IExifService.cs" />
     <Compile Include="ExifReader\Util.cs" />
     <Compile Include="Misc\GenericListTypeConverter.cs" />
     <Compile Include="Helper\EmailHelper.cs" />
@@ -126,8 +133,6 @@
     <Compile Include="Misc\PostBoardExecption.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Interfaces\IBoardPhoto.cs" />
-    <Compile Include="Entities\CommonWebsiteSetting.cs" />
-    <Compile Include="Entities\SocialMediaSetting.cs" />
     <Compile Include="Reflection\ITypeFinder.cs" />
     <Compile Include="Reflection\TypeFinder.cs" />
     <Compile Include="Web\Page\AsIsBundleOrderer.cs" />
@@ -143,7 +148,7 @@
     <Compile Include="Web\Routing\IRoutePublisher.cs" />
     <Compile Include="Web\Routing\IRouteProvider.cs" />
     <Compile Include="Web\Routing\GuidConstraint.cs" />
-    <Compile Include="Web\Seo\SeoSettings.cs" />
+    <Compile Include="Settings\SEOSetting.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

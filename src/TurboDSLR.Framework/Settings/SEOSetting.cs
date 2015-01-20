@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TurboDSLR.Framework.Interfaces;
 
-namespace TurboDSLR.Framework.Web.Seo
+namespace TurboDSLR.Framework.Web.Settings
 {
     /// <summary>
     /// SEO settings

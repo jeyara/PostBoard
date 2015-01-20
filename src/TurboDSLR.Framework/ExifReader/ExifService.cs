@@ -1,28 +1,21 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using TurboDSLR.Framework.Exif;
 using TurboDSLR.Framework.ExifReader;
 
 namespace TurboDSLR.Framework.Exif
 {
-    /// <summary>
-    /// Based on http://www.codeproject.com/Articles/27242/ExifTagCollection-An-EXIF-metadata-extraction-libr
-    /// </summary>
-    public sealed class ExifTagCollection : IEnumerable<ExifTag>
+    public partial class ExifService : IExifService
     {
-        private Dictionary<int, ExifTag> _tags;
+        #region IExifReader Members
 
-        #region Constructors
-        public ExifTagCollection(string fileName)
-            : this(fileName, true, false)
-        {
-        }
-
-        public ExifTagCollection(string fileName, bool useEmbeddedColorManagement, bool validateImageData)
+        public Dictionary<int, Exif.ExifTag> ReadExifTags(string fileName, bool useEmbeddedColorManagement = true, bool validateImageData = false)
         {
             using (FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read))
             {
@@ -30,22 +23,24 @@ namespace TurboDSLR.Framework.Exif
                     useEmbeddedColorManagement,
                     validateImageData);
 
-                ReadTags(image.PropertyItems);
+                return ReadTags(image.PropertyItems);
             }
         }
 
-        public ExifTagCollection(Image image)
+        public Dictionary<int, Exif.ExifTag> ReadExifTags(System.Drawing.Image image)
         {
-            ReadTags(image.PropertyItems);
+            return ReadTags(image.PropertyItems);
         }
+
         #endregion
 
         #region Private Methods
-        private void ReadTags(PropertyItem[] pitems)
+
+        private Dictionary<int, ExifTag> ReadTags(PropertyItem[] pitems)
         {
             Encoding ascii = Encoding.ASCII;
             ExifSupportedTags supportedTags = new ExifSupportedTags();
-            _tags = new Dictionary<int, ExifTag>();
+            var tags = new Dictionary<int, ExifTag>();
 
             foreach (PropertyItem pitem in pitems)
             {
@@ -558,8 +553,10 @@ namespace TurboDSLR.Framework.Exif
 
                 tag.Value = value;
 
-                _tags.Add(tag.Id, tag);
+                tags.Add(tag.Id, tag);
             }
+
+            return tags;
         }
 
         private static string GetComponentsConfig(byte[] bytes)
@@ -573,34 +570,5 @@ namespace TurboDSLR.Framework.Exif
             return s;
         }
         #endregion
-
-        #region IEnumerable<ExifTag> Members
-
-        public IEnumerator<ExifTag> GetEnumerator()
-        {
-            return _tags.Values.GetEnumerator();
-        }
-
-        #endregion
-
-        #region IEnumerable Members
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return _tags.Values.GetEnumerator();
-        }
-
-        #endregion
-
-        #region Indexers
-        public ExifTag this[int id]
-        {
-            get
-            {
-                return _tags[id];
-            }
-        }
-        #endregion
     }
-
 }

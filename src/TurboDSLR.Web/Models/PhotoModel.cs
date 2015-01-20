@@ -6,15 +6,12 @@ using TurboDSLR.Framework.Common;
 
 namespace TurboDSLR.Web.Models
 {
-    public class PhotoModel : BaseEntityModel, IBoardPhoto
+    public class PhotoModel : BaseEntityModel
     {
-        private IList<string> _hashTags;
-        private Dictionary<string, string> _attributes;
-
         public PhotoModel()
         {
-            _hashTags = new List<string>();
-            _attributes = new Dictionary<string, string>();
+            HashTags = new List<string>();
+            ExifData = new ExifModel();
         }
 
         #region IBoardPhoto Members
@@ -29,29 +26,9 @@ namespace TurboDSLR.Web.Models
 
         public string AltText { get; set; }
 
-        public IList<string> HashTags
-        {
-            get
-            {
-                return _hashTags;
-            }
-            set
-            {
-                _hashTags = value;
-            }
-        }
+        public ExifModel ExifData { get; set; }
 
-        public Dictionary<string, string> Attributes
-        {
-            get
-            {
-                return _attributes;
-            }
-            set
-            {
-                _attributes = value;
-            }
-        }
+        public IList<string> HashTags { get; set; }
 
         #endregion
     }
