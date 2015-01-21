@@ -73,29 +73,80 @@ namespace TurboDSLR.Controllers
         [Route("portfolio/tagged/{tag}/{page:int?}", Name = "Tags")]
         public ActionResult Portfolio(string tag, int page = 1)
         {
+            PortfolioModel portfolioModel = new PortfolioModel();
+
+
             var profiler = MiniProfiler.Current; // it's ok if this is null
             using (profiler.Step("Set page title"))
             {
                 ViewBag.Title = tag + " " + page.ToString();
             }
 
-            var x = _imageService.GetImageById(1);
+            PhotoModel pm = new PhotoModel();
+            pm.Caption = "Image One Caption";
+            pm.Title = "Image One Title";
+            pm.FullSizeUrl = "/assets/opera-house.jpg";
+            pm.AltText = "Image One Alt Text";
+            pm.Id = 1;
+            portfolioModel.StreamPhotos.Add(pm);
 
-            return View();
+            PhotoModel pm2 = new PhotoModel();
+            pm2.Caption = "Image 2 Caption";
+            pm2.Title = "Image 2 Title";
+            pm2.FullSizeUrl = "/assets/parliment-house.jpg";
+            pm2.AltText = "Image 2 Alt Text";
+            pm2.Id = 2;
+            portfolioModel.StreamPhotos.Add(pm2);
+
+            PhotoModel pm3 = new PhotoModel();
+            pm3.Caption = "Image 3 Caption";
+            pm3.Title = "Image 3 Title";
+            pm3.FullSizeUrl = "/assets/pier-sunrise.jpg";
+            pm3.AltText = "Image 3 Alt Text";
+            pm3.Id = 3;
+            portfolioModel.StreamPhotos.Add(pm3);
+
+            return View(portfolioModel);
         }
 
         [Route("portfolio/{page:int?}", Name = "Portfolio")]
         public ActionResult Portfolio(int page = 1)
         {
+            PortfolioModel portfolioModel = new PortfolioModel();
+
+            portfolioModel.NextPage = page++;
+
             var profiler = MiniProfiler.Current; // it's ok if this is null
             using (profiler.Step("Set page title"))
             {
-                ViewBag.Title = "all" + " " + page.ToString();
+                ViewBag.Title = page.ToString();
             }
 
-            var x = _imageService.GetImageById(1);
+            PhotoModel pm = new PhotoModel();
+            pm.Caption = "Image One Caption";
+            pm.Title = "Image One Title";
+            pm.FullSizeUrl = "/assets/opera-house.jpg";
+            pm.AltText = "Image One Alt Text";
+            pm.Id = 1;
+            portfolioModel.StreamPhotos.Add(pm);
 
-            return View();
+            PhotoModel pm2 = new PhotoModel();
+            pm2.Caption = "Image 2 Caption";
+            pm2.Title = "Image 2 Title";
+            pm2.FullSizeUrl = "/assets/parliment-house.jpg";
+            pm2.AltText = "Image 2 Alt Text";
+            pm2.Id = 2;
+            portfolioModel.StreamPhotos.Add(pm2);
+
+            PhotoModel pm3 = new PhotoModel();
+            pm3.Caption = "Image 3 Caption";
+            pm3.Title = "Image 3 Title";
+            pm3.FullSizeUrl = "/assets/pier-sunrise.jpg";
+            pm3.AltText = "Image 3 Alt Text";
+            pm3.Id = 3;
+            portfolioModel.StreamPhotos.Add(pm3);
+
+            return View(portfolioModel);
         }
 
         #endregion

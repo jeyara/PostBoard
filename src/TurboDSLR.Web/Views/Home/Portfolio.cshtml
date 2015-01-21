@@ -1,4 +1,5 @@
-﻿@{
+﻿@model TurboDSLR.Web.Models.PortfolioModel
+@{
     //ViewBag.Title = "Pins";
     Layout = "~/Views/Shared/_PublicLayout.cshtml";
 }
@@ -8,96 +9,95 @@
 @*http://webdesign.tutsplus.com/tutorials/build-a-dynamic-grid-with-salvattore-and-bootstrap-in-10-minutes--cms-20410*@
 @*https://github.com/blueimp/Bootstrap-Image-Gallery*@
 
-<div class="container">
+<div class="container-fluid">
 
     <h1>Masonry CSS with Bootstrap</h1>
+    <div id="loader"></div>
+        <div class="row" id="container">
+            @Html.Partial("_PortfolioImage", Model.StreamPhotos)
 
-    <div data-columns="" id="grid" class="columns">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <img src="http://www.jeyara.com/wp-content/uploads/2012/01/450D_02_3899_SMWOL.jpg" />
+            <div class="element col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="/assets/parliment-house.jpg" alt="Parliment house">
+                    <div class="caption">
+                        <h3>Parliment House</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+                    </div>
+                </div>
             </div>
-            <div class="panel-body">
-                <p>Test</p>
+            <div class="element col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="https://farm8.staticflickr.com/7203/6933493897_a50a798ee5_z.jpg" alt="Opera house">
+                    <div class="caption">
+                        <h3>Opera House</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <img src="http://www.jeyara.com/wp-content/uploads/2012/01/450D_02_3899_SMWOL.jpg" />
+            <div class="element col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="/assets/pier-sunrise.jpg" alt="Pier Sunraise">
+                    <div class="caption">
+                        <h3>Pier Sunraise</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <img src="http://www.jeyara.com/wp-content/uploads/2012/01/450D_02_4033_SMWOL.jpg" />
+            <div class="element col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="/assets/opera-house.jpg" alt="Opera house">
+                    <div class="caption">
+                        <h3>Opera House</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <img src="https://farm8.staticflickr.com/7203/6933493897_a50a798ee5_z.jpg" />
+            <div class="element col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="/assets/parliment-house.jpg" alt="Parliment house">
+                    <div class="caption">
+                        <h3>Parliment House</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <img src="http://www.jeyara.com/wp-content/uploads/2012/01/450D_02_2840_SMWOL.jpg" />
+            <div class="element col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="/assets/pier-sunrise.jpg" alt="Pier Sunraise">
+                    <div class="caption">
+                        <h3>Pier Sunraise</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <img src="http://www.jeyara.com/wp-content/uploads/2012/02/450D_03_0420_SMWL.jpg" />
+            <div class="element col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="/assets/opera-house.jpg" alt="Opera house">
+                    <div class="caption">
+                        <h3>Opera House</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <img src="http://www.jeyara.com/wp-content/uploads/2012/01/6245847745_d3ec923c70_o.jpg" />
+            <div class="element col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="http://www.jeyara.com/wp-content/uploads/2011/06/singing-alone-e1308229246463-681x1024.jpg" alt="Parliment house">
+                    <div class="caption">
+                        <h3>Parliment House</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <img src="http://www.jeyara.com/wp-content/uploads/2011/06/lankathilaka-temple.jpg" />
-            </div>
-        </div>
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <img src="http://www.jeyara.com/wp-content/uploads/2011/06/alone-in-beach.jpg" />
-            </div>
-        </div>
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <img src="http://www.jeyara.com/wp-content/uploads/2011/06/pink-peatals.jpg" />
-            </div>
-        </div>
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <img src="http://www.jeyara.com/wp-content/uploads/2011/06/singing-alone-e1308229246463-681x1024.jpg" />
-            </div>
-        </div>
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <img src="http://www.jeyara.com/wp-content/uploads/2011/06/landscape-in-barthust.jpg" />
-            </div>
-        </div>
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <img src="http://www.jeyara.com/wp-content/uploads/2011/06/4530065801_8d738fce0f_z.jpg" />
-            </div>
-        </div>
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <img src="https://farm4.staticflickr.com/3912/15175742761_7fe5cd45b4.jpg" />
-            </div>
-        </div>
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <img src="https://farm8.staticflickr.com/7336/9577188351_f439acb498.jpg" />
-            </div>
-        </div>
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <img src="http://www.jeyara.com/wp-content/uploads/2011/06/landscape-in-barthust.jpg" />
+            <div class="element col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="http://www.jeyara.com/wp-content/uploads/2011/06/landscape-in-barthust.jpg" alt="Pier Sunraise">
+                    <div class="caption">
+                        <h3>Pier Sunraise</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+                    </div>
+                </div>
             </div>
         </div>
-
-    </div>
 
     <div class="btn-group btn-group-justified" role="group" aria-label="...">
         <div class="btn-group" role="group">
@@ -105,87 +105,97 @@
         </div>
     </div>
 
-    <input type="hidden" id="nextPage" value="2" />
+    <input type="hidden" id="nextPage" value="@Model.NextPage" />
+    <input type="hidden" id="currentTag" value="@Model.Tag" />
     <input type="hidden" id="loadingStatus" value="0" />
 
-    <!-- Salvattore JS -->
-    <script src="/Scripts/salvattore.js"></script>
+    <script src="/Scripts/isotope.pkgd.js"></script>
+    <script src="/Scripts/jquery.infinitescroll.js"></script>
 
     <script type="text/javascript">
+        $(function () {
 
-        var appendButton = document.querySelector('#loadmore');
+            var appendButton = document.querySelector('#loadmore');
+            appendButton.addEventListener('click', append_post);
 
-        appendButton.addEventListener('click', append_post);
+            function append_post(event) {
+                LoadNextSet();
+            }
 
-        function append_post(event) {
-            LoadNextSet();
-        }
+            var $container = $('#container');
 
-        function append(url) {
-            // build/select our elements
-            var grid = $('#grid');
-            var item = document.createElement('div');
+            $container.isotope({
+                itemSelector: '.element',
+                transitionDuration: '0.8s'
+            });
 
-            // build the html
-            var h = '</div><div class="panel panel-primary"><div class="panel-heading"><img src="' + url + '"/></div></div>';
+            //$(window).scroll(function () {
+            //    if ($(window).scrollTop() + $(window).height() >= $(document).height() - 300) {
+            //        alert("bottom of the page reached!");
+            //        LoadNextSet();
+            //        //loaded[pages[current + 1]] = loaded[pages[current + 1]] + 1;
 
-            //$('#grid').append(h);
-            alert(h);
-            salvattore.append_elements(grid, h);
-            item.outerHTML = h;
-            alert(item.outerHTML);
-        }
+            //        //if (loaded[pages[current + 1]] <= 1)
+            //        //    loadMoreContent(current + 1);
+            //    }
+            //});
 
-        $(window).scroll(function () {
-            if ($(window).scrollTop() + $(window).height() >= $(document).height() - 300) {
-                LoadNextSet($(window).scrollTop() + $(window).height());
+            function LoadNextSet() {
+                var nextPage = $("#nextPage").val();
+                var loadingStatus = $("#loadingStatus").val();
+                var np;
+
+                if (loadingStatus == 1) {
+                    return;
+                }
+
+                $('#loader').fadeIn('slow');
+                $("#loadingStatus").val(1);
+
+                //alert("bottom of the page reached!");
+
+                $.ajax({
+                    type: 'GET',
+                    url: '/photostream/' + nextPage,
+                    dataType: 'json',
+                    success: function (jsonData) {
+
+
+                        if (jsonData == null) {
+                            return;
+                        }
+
+                        np = parseInt(nextPage, 10) + parseInt(1, 10);
+
+
+                        $.each(jsonData, function (index, photo) {
+                            append(photo);
+
+                        });
+                    },
+                    error: function () {
+                        $('#loader').fadeOut('slow');
+                        alert('Error');
+                    }
+                });
+
+                $("#loadingStatus").val(0);
+                $("#nextPage").val(np);
+                $('#loader').fadeOut('slow');
+
+                return false;
             }
         });
 
 
-        function LoadNextSet(scrollPosition) {
-            var nextPage = $("#nextPage").val();
-            var loadingStatus = $("#loadingStatus").val();
-            var np;
-            if (loadingStatus == 1) {
-                return;
-            }
+        function append(photo) {
 
-            $("#loadingStatus").val(1);
+            var $container = $('#container');
+            // build the html
+            var item = '<div class="element col-sm-6 col-md-4"><div class="thumbnail"><img src="' + photo.FullSizeUrl + '" alt="' + photo.AltText + '"><div class="caption"><h3>Pier Sunraise</h3><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p></div></div></div>';
 
-            //alert("bottom of the page reached!");
-            alert(scrollPosition);
-
-            $.ajax({
-                type: 'GET',
-                url: '/photostream/' + nextPage,
-                dataType: 'json',
-                success: function (jsonData) {
-
-
-                    if (jsonData == null) {
-                        return;
-                    }
-
-                    np = parseInt(nextPage, 10) + parseInt(1, 10);
-
-
-                    $.each(jsonData, function (index, photo) {
-                        append(photo.FullSizeUrl);
-
-                    });
-                },
-                error: function () {
-                    alert('Error');
-                }
-            });
-
-            $("#loadingStatus").val(0);
-            $("#nextPage").val(np);
-
-            return false;
+            $container.isotope('append', $(item));
         }
-
     </script>
 </div>
 
