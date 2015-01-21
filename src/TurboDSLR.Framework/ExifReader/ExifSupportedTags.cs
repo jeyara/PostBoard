@@ -8,7 +8,7 @@ using TurboDSLR.Framework.Exif;
 
 namespace TurboDSLR.Framework.ExifReader
 {
-    internal sealed class ExifSupportedTags : Hashtable
+    internal sealed class ExifSupportedTags  : Hashtable
     {
         public ExifSupportedTags()
         {
