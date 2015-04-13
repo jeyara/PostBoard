@@ -3,9 +3,9 @@ namespace TurboDSLR.Data.Enum
 {
     public enum ImageStatus:int
     {
-        New = 5,
-        Online = 10,
-        Offline = 20,
-        Deleted = 30
+        New = 20,
+        Published = 40,
+        NotPublished = 60,
+        Deleted = 80
     }
 }

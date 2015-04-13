@@ -18,6 +18,35 @@ namespace TurboDSLR.Services.Core
         private readonly IRepository<Tag> _tagRepository;
         private readonly ICacheManager _cacheManager;
 
+        //http://www.interviewzen.com/interview/Ypk9k2
+        //public int MaxConsecutiveSequence(int[] a)
+        //{
+        //    //Holds final count of consecutive Sequence.
+        //    int maxConsecutiveSequence = 0;
+
+        //    //This is used to increment values
+        //    int elementValueToCheck = 1;
+            
+        //    //Loop through the array.
+        //    for (int i = 0; i < a.Length; i++)
+        //    {
+        //        //If current element value is equal then it is considered as sequence.
+        //        if (a[i] == elementValueToCheck)
+        //        {
+        //            if (elementValueToCheck > 1 && elementValueToCheck > maxConsecutiveSequence)
+        //                maxConsecutiveSequence = elementValueToCheck;
+        //        }
+        //        else
+        //        {
+        //            elementValueToCheck = 0;
+        //        }
+
+        //        elementValueToCheck++;
+        //    }
+
+        //    return maxConsecutiveSequence;
+        //}
+        
         public ImageService(IRepository<Image> imageRepository, IRepository<Tag> tagRepository, ICacheManager cacheManager)
         {
             this._imageRepository = imageRepository;

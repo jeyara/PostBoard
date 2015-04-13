@@ -2,9 +2,11 @@
 using System.IO;
 using System.Web;
 using System.Web.Mvc;
+using TurboDSLR.Data.Models;
 using TurboDSLR.Framework.Caching;
 using TurboDSLR.Framework.Exif;
 using TurboDSLR.Framework.Web;
+using TurboDSLR.Services;
 using TurboDSLR.Services.Core;
 using TurboDSLR.Web.Controllers;
 using TurboDSLR.Web.Models;
@@ -69,7 +71,7 @@ namespace TurboDSLR.Controllers
 
                         string pathString = System.IO.Path.Combine(originalDirectory.ToString(), "imagepath");
 
-                        var fileName1 = Path.GetFileName(file.FileName);
+                        var imageFileName = Path.GetFileName(file.FileName);
 
                         bool isExists = System.IO.Directory.Exists(pathString);
 
@@ -83,12 +85,15 @@ namespace TurboDSLR.Controllers
 
                         ExifModel dt = new ExifModel(col);
 
+                        //Image img = HelperMethods.GetBaseImage(fileName);
+
+
+                        //_imageService.InsertImage(img);
+
                         foreach (var item in col)
                         {
                             Console.WriteLine(item.Value.ToString());
                         }
-
-                        int x = 1;
                     }
 
                 }
